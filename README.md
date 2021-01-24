@@ -3,7 +3,7 @@
 
 公式サイト : https://naiw.jp/programing-battle/programing-battle-1st/
 
-#プログラムの内容
+# プログラムの内容
 
 下記のサイトで公開しています
 https://code-raisan.github.io/NaiwProgramingBattle/index.html
