@@ -1,4 +1,11 @@
 # NaiwProgramingBattle
 第一回 Naiw Programing Battle – SOLVE IN THE WEBの回答になります。
 
-[第一回 Naiw Programing Battle – SOLVE IN THE WEB公式サイト](https://naiw.jp/programing-battle/programing-battle-1st/)
+公式サイト : https://naiw.jp/programing-battle/programing-battle-1st/
+
+#プログラムの内容
+
+下記のサイトで公開しています
+https://code-raisan.github.io/NaiwProgramingBattle/index.html
+
+
