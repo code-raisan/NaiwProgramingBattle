@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Decryption tool | Naiw Programing Battle – SOLVE IN THE WEB</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Naiw Programing Battle – SOLVE IN THE WEB</h1>
+        <h2>Decryption tool</h2>
+        <div class="form">
+            <div class="form-group">
+                <label for="enc_box">Encrypted string</label>
+                <input class="solve_form form-control" id="enc_box"/>
+            </div>
+            <button type="submit" class="btn btn-primary" id="enc_run">Decryption</button>
+        </div>
+        <div class="result">
+            <label>Decrypted string</label>
+            <div class="alert alert-primary" role="alert">
+                <div class="solve_result" id="enc_result"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .container{
+            margin-top: 50px;
+        }
+
+        .result{
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        const enc_run = document.getElementById("enc_run");
+        const enc_box = document.getElementById("enc_box");
+        const enc_result = document.getElementById("enc_result");
+        enc_run.addEventListener("click", () =>{
+            if(!enc_box.value == ""){
+                let strcode = window.atob(enc_box.value).replace(/ /g, ",").split(",");
+                let i = 0;
+                strcode.forEach(value => {
+                    strcode[i] = '0x' + value.toString(16).toUpperCase();
+                    i++;
+                });
+                const utfenc = new TextDecoder("utf-8");
+                const result = utfenc.decode(Uint8Array.from(strcode));
+                enc_result.innerText = result;
+            }else{
+                alert("暗号化された文字列がありません");
+            }
+        }, false);
+    </script>
+</body>
+</html>
