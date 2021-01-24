@@ -7,5 +7,3 @@
 
 下記のサイトで公開しています
 https://code-raisan.github.io/NaiwProgramingBattle/index.html
-
-
