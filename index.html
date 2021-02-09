@@ -17,7 +17,7 @@
             </div>
             <button type="submit" class="btn btn-primary" id="enc_run">Decryption</button>
         </div>
-        <div class="result">
+        <div class="none" id="result_s">
             <label>Decrypted string</label>
             <div class="alert alert-primary" role="alert">
                 <div class="solve_result" id="enc_result"></div>
@@ -32,22 +32,32 @@
         .result{
             margin-top: 20px;
         }
+
+        .none{
+            display: none;
+        }
     </style>
     <script>
         const enc_run = document.getElementById("enc_run");
         const enc_box = document.getElementById("enc_box");
         const enc_result = document.getElementById("enc_result");
+        const result_s = document.getElementById("result_s");
         enc_run.addEventListener("click", () =>{
             if(!enc_box.value == ""){
-                let strcode = window.atob(enc_box.value).replace(/ /g, ",").split(",");
-                let i = 0;
-                strcode.forEach(value => {
-                    strcode[i] = '0x' + value.toString(16).toUpperCase();
-                    i++;
-                });
-                const utfenc = new TextDecoder("utf-8");
-                const result = utfenc.decode(Uint8Array.from(strcode));
-                enc_result.innerText = result;
+                try {
+                    let strcode = window.atob(enc_box.value).replace(/ /g, ",").split(",");
+                    let i = 0;
+                    strcode.forEach(value => {
+                        strcode[i] = '0x' + value.toString(16).toUpperCase();
+                        i++;
+                    });
+                    const utfenc = new TextDecoder("utf-8");
+                    const result = utfenc.decode(Uint8Array.from(strcode));
+                    result_s.className = "result";
+                    enc_result.innerText = result;
+                }catch (e){
+                    alert("復号化に失敗しました");
+                }
             }else{
                 alert("暗号化された文字列がありません");
             }
