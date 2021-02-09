@@ -1,7 +1,7 @@
 # NaiwProgramingBattle
 第一回 Naiw Programing Battle – SOLVE IN THE WEBの回答になります。
 
-公式サイト : https://naiw.jp/programing-battle/programing-battle-1st/
+公式サイト : https://naiw.jp/ended-prog-battle/programing-battle-1st/
 
 ## プログラムの内容
 
