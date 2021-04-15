@@ -42,7 +42,7 @@
         const enc_box = document.getElementById("enc_box");
         const enc_result = document.getElementById("enc_result");
         const result_s = document.getElementById("result_s");
-        enc_run.addEventListener("click", () =>{
+        enc_run.onclick = () => {
             if(!enc_box.value == ""){
                 try {
                     let strcode = window.atob(enc_box.value).replace(/ /g, ",").split(",");
@@ -55,13 +55,13 @@
                     const result = utfenc.decode(Uint8Array.from(strcode));
                     result_s.className = "result";
                     enc_result.innerText = result;
-                }catch (e){
-                    alert("復号化に失敗しました");
-                }
+                }catch(e){
+                    alert(`復号化に失敗しました <${e}>`);
+                };
             }else{
-                alert("暗号化された文字列がありません");
-            }
-        }, false);
+                alert("文字列がありません");
+            };
+        };
     </script>
 </body>
 </html>
